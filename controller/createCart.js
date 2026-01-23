@@ -4,7 +4,6 @@ export const createOrUpdateCart = async (req, res) => {
   try {
     const userId = req.user.userId;
     const { product_Id, quantity = 1 } = req.body.items[0];
-
     const product = await productModel.findById(product_Id);
     if (!product) {
       return res.status(404).json({

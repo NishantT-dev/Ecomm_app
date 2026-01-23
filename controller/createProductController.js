@@ -4,7 +4,6 @@ export const createProduct = async (req, res) => {
   const {  product_Id,
     productName,
     prodPrice} = req.body;
-
   const newProduct = new productModel({
     product_Id,seller_Id,
     productName,

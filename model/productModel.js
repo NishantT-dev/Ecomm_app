@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-
 const productSchema = new mongoose.Schema(
   {
     seller_Id: {
@@ -15,7 +14,6 @@ const productSchema = new mongoose.Schema(
       type: String,
       required: [true, "Product name is required"],
     },
-
     prodDesc: {
       type: String,
     },

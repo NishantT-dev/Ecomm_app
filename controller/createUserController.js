@@ -3,10 +3,8 @@ import { userModel } from "../model/userModel.js";
 export const createUser = async (req, res) => {
   try {
     const { userName, email, password } = req.body;
-
     const newUser = new userModel({ userName, email, password });
     await newUser.save();
-
     const token = jwt.sign(
       { userId: newUser._id, role: newUser.role },
       process.env.JWT_SEC,

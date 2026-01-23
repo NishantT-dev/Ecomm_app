@@ -12,12 +12,10 @@ export const getCart = async (req, res) => {
         cart: null,
       });
     }
-
     return res.status(200).json({
       success: true,
       cart,
     });
-
   } catch (error) {
     return res.status(500).json({
       success: false,
