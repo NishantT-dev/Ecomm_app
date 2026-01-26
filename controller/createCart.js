@@ -6,13 +6,18 @@ export const createOrUpdateCart = async (req, res) => {
     // 1️⃣ Decide cart owner
     const ownerFilter = req.user
       ? { userId: req.user.userId }
-      : { userId: 1, guestId: req.guestId }; // force userId=1 for guests
+      : {  guestId: req.guestId }; // force userId=1 for guests
 
     const ownerData = req.user
       ? { userId: req.user.userId }
-      : { userId: 1, guestId: req.guestId }; // same for new cart creation
+      : { guestId: req.guestId }; // same for new cart creation
 
-    console.log("guestId:", req.guestId, "userId:", req.user?.userId || 1);
+console.log(
+  "guestId:",
+  req.guestId || null,
+  "userId:",
+  req.user?.userId || null,
+);
 
     // 2️⃣ Extract product details
     const { product_Id, quantity = 1 } = req.body.items[0];

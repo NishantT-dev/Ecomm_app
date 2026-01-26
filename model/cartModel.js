@@ -6,12 +6,10 @@ const cartSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
       index:true,
-      sparse: true, // allows multiple docs without userId
     },
     guestId: {
       type: String,
-      unique: true,
-      sparse: true, // allows multiple docs without guestId
+      index:true
     },
     items: [
       {

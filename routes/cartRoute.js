@@ -17,5 +17,5 @@ router.post(
   userAuthentication, // 👈 mandatory
   checkout,
 );
-router.get("/cart", guestMiddleware, userAuthentication, getCart);
+router.get("/cart", optionalAuth, guestMiddleware, getCart);
 export default router;

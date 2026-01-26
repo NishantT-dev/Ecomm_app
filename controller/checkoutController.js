@@ -15,7 +15,7 @@ export const checkout = async (req, res) => {
         message: "Cart is empty",
       });
     }
-
+console.log(userId);
     // 2️⃣ Recalculate total (security)
     let totalAmount = 0;
 

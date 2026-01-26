@@ -33,7 +33,6 @@ export const loginUser = async (req, res) => {
       { expiresIn: "15m" },
     );
 
-    // 4️⃣ 🔥 MERGE GUEST CART (THIS IS WHAT YOU WERE MISSING)
     const guestId = req.headers["x-guest-id"];
 
     if (guestId) {
@@ -54,7 +53,6 @@ export const loginUser = async (req, res) => {
               (uItem) =>
                 uItem.product_Id.toString() === gItem.product_Id.toString(),
             );
-
             if (index > -1) {
               userCart.items[index].quantity += gItem.quantity;
             } else {
