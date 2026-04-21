@@ -14,7 +14,7 @@ router.post(
 );
 router.post(
   "/checkout",
-  userAuthentication, // 👈 mandatory
+  userAuthentication, 
   checkout,
 );
 router.get("/cart", optionalAuth, guestMiddleware, getCart);
